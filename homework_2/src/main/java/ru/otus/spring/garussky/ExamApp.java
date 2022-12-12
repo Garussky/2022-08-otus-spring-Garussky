@@ -1,17 +1,17 @@
 package ru.otus.spring.garussky;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
-import ru.otus.spring.garussky.config.ExamAppConfig;
-import ru.otus.spring.garussky.service.ExamService;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.PropertySource;
+import ru.otus.spring.garussky.service.TestingService;
 
+@ComponentScan
+@PropertySource("classpath:application.properties")
 public class ExamApp {
-
     public static void main(String[] args) {
-        try (AnnotationConfigApplicationContext context =
-                     new AnnotationConfigApplicationContext(ExamAppConfig.class)) {
-            ExamService service = context.getBean(ExamService.class);
-            service.startExam();
-        }
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(ExamApp.class);
+        TestingService testingService = context.getBean(TestingService.class);
+        testingService.startTest();
+        context.close();
     }
 }

@@ -1,17 +1,21 @@
 package ru.otus.spring.garussky.domain;
 
 import lombok.Getter;
-import lombok.RequiredArgsConstructor;
+import lombok.ToString;
 
+@ToString
 @Getter
-@RequiredArgsConstructor
 public class Answer {
+    private int id;
 
-    private final Question question;
+    private String text;
 
-    private final int answer;
+    public Answer() {
+        super();
+    }
 
-    public boolean isCorrectAnswer() {
-        return question.getRightAnswerIndex() == answer;
+    public Answer(int id, String text) {
+        this.id = id;
+        this.text = text;
     }
 }

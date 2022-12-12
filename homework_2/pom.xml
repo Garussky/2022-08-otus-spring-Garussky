@@ -10,7 +10,7 @@
         <version>1.0-SNAPSHOT</version>
     </parent>
 
-    <groupId>ru.otus.spring.belov</groupId>
+    <groupId>ru.otus.spring.garussky</groupId>
     <artifactId>homework_2</artifactId>
     <version>1.1</version>
 
